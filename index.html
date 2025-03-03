@@ -1,0 +1,726 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Core Wounds Quiz&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>:root {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--primary-color: #6b5b95;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--secondary-color: #88b04b;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--background-color: #f8f9fa;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--text-color: #333;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--card-color: #fff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--shadow: 0 4px 12px rgba(0, 0, 0, 0.1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--transition: all 0.3s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>line-height: 1.6;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--text-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--background-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex-direction: column;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>min-height: 100vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 800px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 2rem auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--card-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: var(--shadow);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: var(--transition);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>header {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>h1 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--primary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.subtitle {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #666;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.progress-container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: #e0e0e0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 4px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.progress-bar {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: var(--primary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 0%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: width 0.3s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.question {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.question.active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>animation: fadeIn 0.5s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.question h2 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--primary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.options {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: grid;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>grid-gap: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.option {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f1f3f5;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid #e9ecef;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: var(--transition);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.option:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #e9ecef;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.option.selected {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--primary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-color: var(--primary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.buttons {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: space-between;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>button {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 0.8rem 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--primary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: var(--transition);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>button:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #5a4a84;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>button:disabled {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #ccc;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: not-allowed;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>#prev-btn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #6c757d;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>#prev-btn:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #5a6268;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.intro, .results {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.intro p, .results p {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.results {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.result-card {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f8f9fa;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-left: 5px solid var(--primary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: left;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.result-card h3 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--primary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.secondary-result {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-left-color: var(--secondary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.secondary-result h3 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--secondary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.strategies {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #e9ecef;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.strategies h3 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--text-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.strategies ul {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: left;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding-left: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.strategies li {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.email-signup {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f1f8e9;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: left;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-left: 5px solid var(--secondary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.email-form {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 1rem 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>#email-input {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex-grow: 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 0.8rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid #ccc;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px 0 0 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>#submit-email {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 0.8rem 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--secondary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 0 5px 5px 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: var(--transition);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>#submit-email:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #779a3e;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.privacy-note {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #666;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 0.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.strategy-teaser {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-style: italic;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #666;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.restart {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@keyframes fadeIn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(10px); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>.container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>margin: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>padding: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;header&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Core Wounds Quiz&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="subtitle"&gt;Discover your dominant and secondary core wounds&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="progress-container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="progress-bar" id="progress"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="intro" id="intro"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;This quiz will help you identify your core wounds - the subconscious patterns that influence your thoughts, behaviors, and decisions.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Answer 8 questions honestly, and we'll provide personalized insights to help you understand yourself better.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button id="start-btn"&gt;Start Quiz&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="quiz" style="display: none;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- Questions will be inserted here by JavaScript --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="results" id="results"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Your Core Wounds Analysis&lt;/h2&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="primary-result" class="result-card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Primary result will be inserted here --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="secondary-result" class="result-card secondary-result"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;!-- Secondary result will be inserted here --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="strategies"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Healing Strategies Preview&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div id="strategies-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;!-- Strategies will be inserted here --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p class="strategy-teaser"&gt;This is just a sample of available healing strategies. For a complete personalized healing plan...&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="email-signup"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Get Your Complete Healing Plan&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Enter your email to receive a detailed healing plan with all strategies customized for your specific core wounds.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="email-form"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;input type="email" id="email-input" placeholder="Your email address" required&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button id="submit-email"&gt;Send Me My Plan&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p class="privacy-note"&gt;We respect your privacy and will never share your email.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div id="email-confirmation" style="display: none; color: green; margin-top: 10px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>Thank you! Your healing plan will be sent to your inbox shortly.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="restart"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button id="restart-btn"&gt;Take Quiz Again&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const questions = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>text: "When faced with failure, what thought crosses your mind first?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I'm not good enough.", wound: "notEnough" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I don't deserve success.", wound: "unworthy" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I should have worked harder.", wound: "powerless" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "No one supports me.", wound: "alone" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>text: "Which of these situations triggers you the most?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Being ignored or overlooked", wound: "notEnough" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Feeling like you'll never be successful", wound: "unworthy" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Feeling like you have no control", wound: "powerless" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Being judged or criticised", wound: "alone" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>text: "How do you usually react to rejection?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I feel invisible or unworthy", wound: "notEnough" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I push myself even harder to prove my worth", wound: "unworthy" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I withdraw and avoid people", wound: "powerless" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I get angry or defensive", wound: "alone" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>text: "If you had unlimited resources, what would you fix about yourself first?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "My self-confidence", wound: "notEnough" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "My sense of purpose", wound: "unworthy" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "My fear of failure", wound: "powerless" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "My ability to trust people", wound: "alone" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>text: "How do you react when someone criticises you?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I assume they don't respect me and take it personally", wound: "notEnough" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I overanalyse it and feel like I've done something wrong", wound: "unworthy" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I shut down emotionally and retreat", wound: "powerless" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I get defensive and argue back", wound: "alone" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>text: "What do you struggle with most in relationships?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Feeling like I'm not valued or appreciated", wound: "notEnough" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Feeling like I don't deserve love", wound: "unworthy" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Feeling like I can't control the outcome", wound: "powerless" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Feeling like people always leave me", wound: "alone" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>text: "What is your biggest fear in your career or business?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Not being seen as successful or capable", wound: "notEnough" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Reaching a goal and still feeling empty", wound: "unworthy" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Losing control of my progress or failing unexpectedly", wound: "powerless" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "Not having the support or connections I need", wound: "alone" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>text: "When things go wrong, how do you cope?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>options: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I overwork myself to prove I can fix it", wound: "notEnough" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I accept the failure as proof that I'm not good enough", wound: "unworthy" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I panic or try to control every detail", wound: "powerless" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ text: "I feel abandoned and assume no one understands me", wound: "alone" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const woundDescriptions = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>notEnough: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "I Am Not Enough",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>description: "You often feel the need to prove yourself through achievements and external validation. This may lead to overworking, perfectionism, or burnout. You might constantly compare yourself to others and fear being overlooked or ignored.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>strategies: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Practice self-compassion and acknowledge your inherent worth beyond your achievements",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Set healthy boundaries around work and rest",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Challenge perfectionist tendencies by celebrating progress rather than perfection",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Create a list of your strengths and accomplishments to review when self-doubt creeps in"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>unworthy: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "I Am Unworthy",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>description: "You may feel undeserving of success, love, or positive outcomes. This can lead to self-sabotage, difficulty receiving compliments, and accepting less than you deserve. You might push yourself to extreme levels trying to prove your worth.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>strategies: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Practice receiving compliments and positive feedback without deflection",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Identify and challenge beliefs about worthiness that were formed in childhood",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Set intentions that align with your values rather than external validation",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Learn to recognize and interrupt self-sabotaging behaviors"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>powerless: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "I Am Powerless",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>description: "You struggle with feeling like you lack control over important aspects of your life. This might manifest as anxiety, overplanning, difficulty trusting the process, or avoiding situations where outcomes are uncertain.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>strategies: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Focus on what you can control rather than what you cannot",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Practice surrendering outcomes through mindfulness and acceptance",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Build resilience by stepping outside your comfort zone in small, manageable ways",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Recognize where you do have power and agency in your life"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>alone: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "I Am Alone",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>description: "You often feel unsupported, misunderstood, or abandoned. This might lead to difficulty trusting others, defensiveness in relationships, or fear of vulnerability. You may either withdraw from connections or become overly dependent on them.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>strategies: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Practice vulnerability in safe relationships gradually",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Identify and communicate your needs clearly rather than expecting others to know them",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Build a diverse support network rather than relying on just one or two people",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>"Develop self-soothing practices to manage feelings of abandonment"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let currentQuestion = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let scores = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>notEnough: 0,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>unworthy: 0,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>powerless: 0,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>alone: 0</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let userAnswers = [];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// DOM elements</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const introSection = document.getElementById('intro');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const quizSection = document.getElementById('quiz');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const resultsSection = document.getElementById('results');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const startButton = document.getElementById('start-btn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const restartButton = document.getElementById('restart-btn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const progressBar = document.getElementById('progress');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Event listeners</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>startButton.addEventListener('click', startQuiz);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>restartButton.addEventListener('click', restartQuiz);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Initialize the quiz</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function startQuiz() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>introSection.style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>quizSection.style.display = 'block';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Reset quiz state</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentQuestion = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>scores = { notEnough: 0, unworthy: 0, powerless: 0, alone: 0 };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>userAnswers = [];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Generate question HTML</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>generateQuiz();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Show first question</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>showQuestion(0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>updateProgressBar();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function generateQuiz() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>quizSection.innerHTML = '';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Create questions</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>questions.forEach((q, index) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const questionDiv = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>questionDiv.classList.add('question');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>questionDiv.id = `question-${index}`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const questionTitle = document.createElement('h2');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>questionTitle.textContent = `Question ${index + 1}: ${q.text}`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const optionsDiv = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>optionsDiv.classList.add('options');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Create options</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>q.options.forEach((option, optIndex) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const optionDiv = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>optionDiv.classList.add('option');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>optionDiv.dataset.wound = option.wound;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>optionDiv.textContent = option.text;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>optionDiv.addEventListener('click', () =&gt; selectOption(index, optIndex, option.wound));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>optionsDiv.appendChild(optionDiv);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>questionDiv.appendChild(questionTitle);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>questionDiv.appendChild(optionsDiv);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>quizSection.appendChild(questionDiv);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Add navigation buttons</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const buttonsDiv = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>buttonsDiv.classList.add('buttons');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const prevButton = document.createElement('button');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>prevButton.id = 'prev-btn';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>prevButton.textContent = 'Previous';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>prevButton.addEventListener('click', prevQuestion);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>prevButton.disabled = true;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const nextButton = document.createElement('button');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>nextButton.id = 'next-btn';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>nextButton.textContent = 'Next';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>nextButton.addEventListener('click', nextQuestion);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>nextButton.disabled = true;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>buttonsDiv.appendChild(prevButton);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>buttonsDiv.appendChild(nextButton);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>quizSection.appendChild(buttonsDiv);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function selectOption(questionIndex, optionIndex, wound) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Clear previous selection</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const allOptions = document.querySelectorAll(`#question-${questionIndex} .option`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>allOptions.forEach(opt =&gt; opt.classList.remove('selected'));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Select current option</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>allOptions[optionIndex].classList.add('selected');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Store the answer</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>userAnswers[questionIndex] = { optionIndex, wound };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Enable next button</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('next-btn').disabled = false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function showQuestion(index) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Hide all questions</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.question').forEach(q =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>q.classList.remove('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>q.style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Show current question</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const currentQ = document.getElementById(`question-${index}`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentQ.style.display = 'block';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentQ.classList.add('active');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Update buttons</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const prevButton = document.getElementById('prev-btn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const nextButton = document.getElementById('next-btn');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>prevButton.disabled = index === 0;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (index === questions.length - 1) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>nextButton.textContent = 'See Results';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>nextButton.textContent = 'Next';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Disable next button if no option selected</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>nextButton.disabled = !userAnswers[index];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// If previously answered, show selection</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (userAnswers[index]) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const selectedOption = document.querySelectorAll(`#question-${index} .option`)[userAnswers[index].optionIndex];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>selectedOption.classList.add('selected');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentQuestion = index;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>updateProgressBar();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function prevQuestion() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (currentQuestion &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showQuestion(currentQuestion - 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function nextQuestion() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (currentQuestion &lt; questions.length - 1) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showQuestion(currentQuestion + 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>calculateResults();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function updateProgressBar() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const progress = ((currentQuestion + 1) / questions.length) * 100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>progressBar.style.width = `${progress}%`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function calculateResults() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Reset scores</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>scores = { notEnough: 0, unworthy: 0, powerless: 0, alone: 0 };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Calculate scores from answers</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>userAnswers.forEach(answer =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>scores[answer.wound]++;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Find primary and secondary wounds</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let wounds = Object.entries(scores)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>.sort((a, b) =&gt; b[1] - a[1])</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>.map(item =&gt; ({ type: item[0], score: item[1] }));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const primaryWound = wounds[0];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const secondaryWound = wounds[1];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Check if there's a tie</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const isTie = primaryWound.score === secondaryWound.score;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Display results</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>displayResults(primaryWound, secondaryWound, isTie);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function displayResults(primary, secondary, isTie) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>quizSection.style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>resultsSection.style.display = 'block';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Display primary result</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const primaryResultDiv = document.getElementById('primary-result');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>primaryResultDiv.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;🔍 Your ${isTie ? 'First' : 'Primary'} Core Wound: "${woundDescriptions[primary.type].title}"&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;${woundDescriptions[primary.type].description}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Display secondary result</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const secondaryResultDiv = document.getElementById('secondary-result');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (primary.score - secondary.score &lt;= 2) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// There's a significant secondary wound</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>secondaryResultDiv.style.display = 'block';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>secondaryResultDiv.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;🌿 Your ${isTie ? 'Second' : 'Secondary'} Core Wound: "${woundDescriptions[secondary.type].title}"&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;${woundDescriptions[secondary.type].description}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// No significant secondary wound</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>secondaryResultDiv.style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Display limited strategies as a preview</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const strategiesDiv = document.getElementById('strategies-content');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let strategiesHTML = '&lt;ul&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Show only ONE primary wound strategy as a teaser</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>strategiesHTML += `&lt;li&gt;${woundDescriptions[primary.type].strategies[0]}&lt;/li&gt;`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Add ONE secondary wound strategy if significant</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (primary.score - secondary.score &lt;= 2) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>strategiesHTML += `&lt;li&gt;${woundDescriptions[secondary.type].strategies[0]}&lt;/li&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>strategiesHTML += '&lt;/ul&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>strategiesDiv.innerHTML = strategiesHTML;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function restartQuiz() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>resultsSection.style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>startQuiz();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Reset email form</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('email-input').value = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('email-confirmation').style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Email submission handling</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('submit-email').addEventListener('click', function() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const emailInput = document.getElementById('email-input');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const email = emailInput.value.trim();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (email &amp;&amp; isValidEmail(email)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// In a real application, you would send this to your server or email service</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>console.log('Email submitted:', email);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Show confirmation message</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById('email-confirmation').style.display = 'block';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Clear input</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>emailInput.value = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>alert('Please enter a valid email address.');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Simple email validation</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function isValidEmail(email) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return re.test(email);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
